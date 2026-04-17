@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K-SoundRentals</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="logo">🎤 K-SoundRentals</div>
+    <ul class="nav-links">
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#booking">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>Karaoke Party Delivered
+    To Your Door 🎶</h1>
+    <p>Premium karaoke setup for birthdays, fiestas & reunions in Cebu.</p>
+    <a href="#packages" class="btn">See Packages</a>
+  </section>
+
+  <!-- EQUIPMENT SECTION -->
+  <section class="equipment">
+    <h2>What's Included in Every Package</h2>
+    <div class="equip-grid">
+      <div class="equip-item">🔊 JBL Partybox 520</div>
+      <div class="equip-item">📺 32" Smart TV</div>
+      <div class="equip-item">🎵 Karaoke Player</div>
+      <div class="equip-item">🎙️ 2 Wireless Mics</div>
+    </div>
+  </section>
+
+  <!-- PACKAGES SECTION -->
+  <section id="packages" class="packages">
+    <h2>Choose Your Package</h2>
+    <div class="package-grid">
+
+      <div class="package-card">
+        <h3>Basic</h3>
+        <p class="price">₱999</p>
+        <p class="hours">3 hours</p>
+        <ul>
+          <li>Full equipment set</li>
+          <li>Free delivery (within area)</li>
+          <li>Standard song list</li>
+        </ul>
+        <a href="#booking" class="btn">Book This</a>
+      </div>
+
+      <div class="package-card featured">
+        <span class="badge">Most Popular</span>
+        <h3>Party</h3>
+        <p class="price">₱1,499</p>
+        <p class="hours">5 hours</p>
+        <ul>
+          <li>Full equipment set</li>
+          <li>Free delivery</li>
+          <li>Extended song list</li>
+          <li>Light effects included</li>
+        </ul>
+        <a href="#booking" class="btn">Book This</a>
+      </div>
+
+      <div class="package-card">
+        <h3>Premium</h3>
+        <p class="price">₱1,999</p>
+        <p class="hours">8 hours</p>
+        <ul>
+          <li>Full equipment set</li>
+          <li>Priority delivery</li>
+          <li>Full song library</li>
+          <li>Light effects</li>
+          <li>Operator on-site</li>
+        </ul>
+        <a href="#booking" class="btn">Book This</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VIDEOS SECTION -->
+  <section id="videos" class="videos">
+  <h2>See It In Action</h2>
+  <p>Watch our real karaoke setup videos from past events.</p>
+
+  <div class="video-grid">
+    <a href="https://www.facebook.com/share/r/1Ns8TwmQs2/"
+       target="_blank"
+       class="video-placeholder">
+       ▶ Birthday Party Setup
+    </a>
+
+    <a href="https://www.facebook.com/share/r/177mgxHSqY/"
+       target="_blank"
+       class="video-placeholder">
+       ▶ Fiesta Night
+    </a>
+
+    <a href="https://www.facebook.com/share/r/1JE5j95vvZ/"
+       target="_blank"
+       class="video-placeholder">
+       ▶ Family Reunion
+    </a>
+  </div>
+</section>
+
+<!-- BOOKING SECTION -->
+<section id="booking" class="booking">
+  <h2>Reserve Your Date</h2>
+  <p class="booking-sub">Check available dates then fill in your details.
+  We will confirm via Messenger after reviewing your booking.</p>
+
+  <!-- CALENDAR TOGGLE BUTTON -->
+  <button class="btn btn-outline"
+    onclick="document.getElementById('calendar-modal').style.display='flex'"
+    type="button">
+    📅 Check Available Dates
+  </button>
+
+  <!-- CALENDAR MODAL -->
+  <div id="calendar-modal" class="modal-overlay"
+    style="display:none"
+    onclick="if(event.target===this)this.style.display='none'">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Availability Calendar</h3>
+        <button class="modal-close"
+          onclick="document.getElementById('calendar-modal').style.display='none'">✕</button>
+      </div>
+      <div class="cal-legend">
+        <span class="leg available">Available</span>
+        <span class="leg booked">Unavailable</span>
+        <span class="leg selected">Selected</span>
+      </div>
+      <div id="calendar-root"></div>
+      <button class="btn" style="margin-top:16px;width:100%"
+        onclick="useSelectedDate()">Use This Date</button>
+
+      <!-- OWNER ADMIN AREA -->
+      <div class="admin-zone">
+        <input type="password" id="admin-pw"
+          placeholder="Owner password"
+          class="admin-input">
+        <button class="btn-small"
+          onclick="unlockAdmin()">Admin</button>
+      </div>
+      <p id="admin-msg" class="admin-msg"></p>
+    </div>
+  </div>
+
+  <!-- BOOKING FORM -->
+  <form class="booking-form" onsubmit="handleBooking(event)">
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text"
+          placeholder="Juan dela Cruz" required>
+      </div>
+      <div class="form-group">
+        <label>Contact Number</label>
+        <input type="tel"
+          placeholder="09XX XXX XXXX" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Event Date</label>
+        <input type="date" id="event-date" required>
+      </div>
+      <div class="form-group">
+        <label>Delivery Time</label>
+        <select required>
+          <option value="">Pick a time</option>
+          <option>8:00 AM</option>
+          <option>9:00 AM</option>
+          <option>10:00 AM</option>
+          <option>11:00 AM</option>
+          <option>12:00 PM</option>
+          <option>1:00 PM</option>
+          <option>2:00 PM</option>
+          <option>3:00 PM</option>
+          <option>4:00 PM</option>
+          <option>5:00 PM</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Package</label>
+      <select required>
+        <option value="">Choose a Package</option>
+        <option>Basic — ₱999 (3 hrs)</option>
+        <option>Party — ₱1,499 (5 hrs)</option>
+        <option>Premium — ₱1,999 (8 hrs)</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Event Address</label>
+      <input type="text"
+        placeholder="Barangay, City, Cebu" required>
+    </div>
+
+    <button type="submit" class="btn">
+      Send Reservation Request
+    </button>
+  </form>
+
+  <!-- SUCCESS MESSAGE (hidden until form submitted) -->
+  <div id="booking-success" class="success-box"
+    style="display:none">
+    <h3>🎉 Request Sent!</h3>
+    <p>We received your booking request. Please send your
+    <strong>₱500 security deposit</strong> via GCash or GoTyme
+    to confirm your slot, then message us on Facebook with
+    your receipt.</p>
+    <div class="payment-info">
+      <p>GCash: <strong>0962 450 5778</strong></p>
+      <p>GoTyme: <strong>0193 3986 5806</strong></p>
+      <p>Account Name: <strong>Kyle Jayverson Baguio</strong></p>
+      <p>Amount: <strong>₱500</strong></p>
+    </div>
+    <a href="https://m.me/YOUR_FB_PAGE"
+      class="btn" target="_blank">
+      Message Us on Facebook
+    </a>
+  </div>
+    <!-- FOOTER -->
+  <footer>
+    <p>© 2026 K-SoundRentals · Cebu City · <a href="#">Facebook Page</a></p>
+  </footer>
+
+  <script src="calendar.js"></script>
+</section>

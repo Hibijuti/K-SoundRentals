@@ -23,12 +23,12 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 16px 40px;
-  background: #161616;
+  background: #000000;
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .logo {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
   color: #ffa733;
 }
@@ -52,7 +52,7 @@ a {
 .hero {
   text-align: center;
   padding: 80px 20px;
-  background: #161616;
+  background: linear-gradient(135deg, #1a0a00, #2e1500, #161616);
 }
 
 .hero h1 {
@@ -63,7 +63,7 @@ a {
 
 .hero p {
   font-size: 18px;
-  color: rgba(255,255,255,0.6);
+  color:  #ff8c00;
   margin-bottom: 32px;
 }
 
@@ -533,4 +533,187 @@ footer {
 /* ===== MOBILE ===== */
 @media (max-width: 540px) {
   .form-row { grid-template-columns: 1fr; }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 100px; 
+  width: auto;
+  object-fit: contain;
+}
+
+/* ===== PACKAGE PRICING ROWS ===== */
+.packages-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 36px;
+  margin-top: -24px;
+}
+
+.pkg-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 16px;
+}
+
+.price-options {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 4px 0;
+  margin-bottom: 20px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+}
+
+.duration {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffa733;
+}
+
+.price-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  margin: 0 16px;
+}
+
+.badge-gold {
+  background: linear-gradient(135deg, #ff8c00, #ffd700);
+  color: #000;
+}
+
+/* ===== VIDEO CARDS ===== */
+.video-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.video-card:hover {
+  transform: translateY(-4px);
+  border-color: #ff8c00;
+}
+
+.video-thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.video-card:hover .video-thumb img {
+  transform: scale(1.05);
+}
+
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  background: rgba(255, 140, 0, 0.85);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.play-btn svg {
+  width: 24px;
+  height: 24px;
+  margin-left: 3px;
+}
+
+.video-card:hover .play-btn {
+  background: #ff8c00;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-label {
+  padding: 12px 14px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+  font-weight: 500;
+}
+
+/* ===== HAMBURGER MENU ===== */
+
+/* Hidden on desktop — only shows on mobile */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+}
+
+/* Make navbar sticky so it stays at top when scrolling */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Everything inside this block only applies on phones */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block; /* show the ☰ button */
+  }
+
+  .nav-links {
+    display: none;          /* hidden by default on mobile */
+    flex-direction: column; /* stack links vertically */
+    position: absolute;    /* float below the navbar */
+    top: 60px;              /* height of navbar */
+    left: 0;
+    width: 100%;
+    background: #161616;
+    padding: 16px 24px;
+    gap: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .nav-links.open {
+    display: flex; /* JS adds "open" class to show menu */
+  }
+
+  .navbar {
+    position: relative; /* needed so dropdown positions correctly */
+    flex-wrap: wrap;
+  }
+
 }

@@ -10,12 +10,21 @@
 
   <!-- NAVIGATION -->
   <nav class="navbar">
-    <div class="logo">🎤 K-SoundRentals</div>
-    <ul class="nav-links">
+    <div class="logo">
+      <img src="Logo.png" alt="K-SoundRentals Logo" class="logo-img">
+      K-SoundRentals
+    </div>
+    <!-- HAMBURGER BUTTON (only visible on mobile) -->
+    <button class="hamburger" id="hamburger">
+    ☰
+    </button>
+
+    <ul class="nav-links" id="nav-links">
       <li><a href="#packages">Packages</a></li>
       <li><a href="#videos">Videos</a></li>
       <li><a href="#booking">Book Now</a></li>
-    </ul>
+  </ul>
+
   </nav>
 
   <!-- HERO SECTION -->
@@ -31,83 +40,152 @@
     <h2>What's Included in Every Package</h2>
     <div class="equip-grid">
       <div class="equip-item">🔊 JBL Partybox 520</div>
-      <div class="equip-item">📺 32" Smart TV</div>
+      <div class="equip-item">📺 32" Flat Screen TV</div>
       <div class="equip-item">🎵 Karaoke Player</div>
-      <div class="equip-item">🎙️ 2 Wireless Mics</div>
+      <div class="equip-item">🎙️ 2 JBL Wireless Mics</div>
     </div>
   </section>
 
   <!-- PACKAGES SECTION -->
-  <section id="packages" class="packages">
-    <h2>Choose Your Package</h2>
-    <div class="package-grid">
+<section id="packages" class="packages">
+  <h2>Choose Your Package</h2>
+  <p class="packages-sub">Note: Delivery is not included. 12hrs package is up to 10pm only, no overnight.</p>
 
-      <div class="package-card">
-        <h3>Basic</h3>
-        <p class="price">₱999</p>
-        <p class="hours">3 hours</p>
-        <ul>
-          <li>Full equipment set</li>
-          <li>Free delivery (within area)</li>
-          <li>Standard song list</li>
-        </ul>
-        <a href="#booking" class="btn">Book This</a>
+  <div class="package-grid">
+
+    <!-- PACKAGE 1: Speaker + Mic -->
+    <div class="package-card">
+      <h3>Speaker & Mic</h3>
+      <p class="pkg-desc">JBL Partybox 520 + 2 Wireless Mics</p>
+      <div class="price-options">
+        <div class="price-row">
+          <span class="duration">12 hrs</span>
+          <span class="price">₱999</span>
+        </div>
+        <div class="price-divider"></div>
+        <div class="price-row">
+          <span class="duration">22 hrs</span>
+          <span class="price">₱1,199</span>
+        </div>
       </div>
-
-      <div class="package-card featured">
-        <span class="badge">Most Popular</span>
-        <h3>Party</h3>
-        <p class="price">₱1,499</p>
-        <p class="hours">5 hours</p>
-        <ul>
-          <li>Full equipment set</li>
-          <li>Free delivery</li>
-          <li>Extended song list</li>
-          <li>Light effects included</li>
-        </ul>
-        <a href="#booking" class="btn">Book This</a>
-      </div>
-
-      <div class="package-card">
-        <h3>Premium</h3>
-        <p class="price">₱1,999</p>
-        <p class="hours">8 hours</p>
-        <ul>
-          <li>Full equipment set</li>
-          <li>Priority delivery</li>
-          <li>Full song library</li>
-          <li>Light effects</li>
-          <li>Operator on-site</li>
-        </ul>
-        <a href="#booking" class="btn">Book This</a>
-      </div>
-
+      <ul>
+        <li>JBL Partybox 520 Speaker</li>
+        <li>2 Wireless Microphones</li>
+      </ul>
+      <button class="btn book-btn"
+        data-package="Speaker &amp; Mic — ₱999 (12 hrs)">
+        Book This
+      </button>
     </div>
-  </section>
+
+    <!-- PACKAGE 2: Full Karaoke (1 Speaker) -->
+    <div class="package-card featured">
+      <span class="badge">Most Popular</span>
+      <h3>Full Karaoke</h3>
+      <p class="pkg-desc">TV + Speaker + Mic + Karaoke Player</p>
+      <div class="price-options">
+        <div class="price-row">
+          <span class="duration">12 hrs</span>
+          <span class="price">₱1,299</span>
+        </div>
+        <div class="price-divider"></div>
+        <div class="price-row">
+          <span class="duration">22 hrs</span>
+          <span class="price">₱1,499</span>
+        </div>
+      </div>
+      <ul>
+        <li>32" Smart TV</li>
+        <li>JBL Partybox 520 Speaker</li>
+        <li>2 Wireless Microphones</li>
+        <li>Karaoke Player</li>
+      </ul>
+      <button class="btn book-btn"
+      data-package="Full Karaoke — ₱1,299 (12 hrs)">
+      Book This
+      </button>
+    </div>
+
+    <!-- PACKAGE 3: Full Karaoke (2 Speakers) -->
+    <div class="package-card">
+      <span class="badge badge-gold">Premium</span>
+      <h3>Full Karaoke Pro</h3>
+      <p class="pkg-desc">TV + 2 Speakers + Mic + Karaoke Player</p>
+      <div class="price-options">
+        <div class="price-row">
+          <span class="duration">12 hrs</span>
+          <span class="price">₱2,099</span>
+        </div>
+        <div class="price-divider"></div>
+        <div class="price-row">
+          <span class="duration">22 hrs</span>
+          <span class="price">₱2,299</span>
+        </div>
+      </div>
+      <ul>
+        <li>32" Smart TV</li>
+        <li>2x JBL Partybox 520 Speakers</li>
+        <li>2 Wireless Microphones</li>
+        <li>Karaoke Player</li>
+      </ul>
+      <button class="btn book-btn"
+        data-package="Full Karaoke Pro — ₱2,099 (12 hrs)">
+        Book This
+      </button>
+    </div>
+
+  </div>
+</section>
 
   <!-- VIDEOS SECTION -->
-  <section id="videos" class="videos">
+<section id="videos" class="videos">
   <h2>See It In Action</h2>
   <p>Watch our real karaoke setup videos from past events.</p>
 
   <div class="video-grid">
+
     <a href="https://www.facebook.com/share/r/1Ns8TwmQs2/"
        target="_blank"
-       class="video-placeholder">
-       ▶ Birthday Party Setup
+       class="video-card">
+      <div class="video-thumb">
+        <img src="video1.jpg" alt="Birthday Party Setup">
+        <div class="play-btn">
+          <svg viewBox="0 0 24 24" fill="white">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </div>
+      </div>
+      <p class="video-label">Birthday Party Setup</p>
     </a>
 
     <a href="https://www.facebook.com/share/r/177mgxHSqY/"
        target="_blank"
-       class="video-placeholder">
-       ▶ Fiesta Night
+       class="video-card">
+      <div class="video-thumb">
+        <img src="video2.jpg" alt="Fiesta Night">
+        <div class="play-btn">
+          <svg viewBox="0 0 24 24" fill="white">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </div>
+      </div>
+      <p class="video-label">Fiesta Night</p>
     </a>
 
     <a href="https://www.facebook.com/share/r/1JE5j95vvZ/"
        target="_blank"
-       class="video-placeholder">
-       ▶ Family Reunion
+       class="video-card">
+      <div class="video-thumb">
+        <img src="video3.jpg" alt="Family Reunion">
+        <div class="play-btn">
+          <svg viewBox="0 0 24 24" fill="white">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </div>
+      </div>
+      <p class="video-label">Family Reunion</p>
     </a>
+
   </div>
 </section>
 
@@ -196,11 +274,14 @@
 
     <div class="form-group">
       <label>Package</label>
-      <select required>
+      <select id="package-select" required>
         <option value="">Choose a Package</option>
-        <option>Basic — ₱999 (3 hrs)</option>
-        <option>Party — ₱1,499 (5 hrs)</option>
-        <option>Premium — ₱1,999 (8 hrs)</option>
+        <option>Speaker & Mic — ₱999 (12 hrs)</option>
+        <option>Speaker & Mic — ₱1,199 (22 hrs)</option>
+        <option>Full Karaoke — ₱1,299 (12 hrs)</option>
+        <option>Full Karaoke — ₱1,499 (22 hrs)</option>
+        <option>Full Karaoke Pro — ₱2,099 (12 hrs)</option>
+        <option>Full Karaoke Pro — ₱2,299 (22 hrs)</option>
       </select>
     </div>
 
@@ -229,15 +310,21 @@
       <p>Account Name: <strong>Kyle Jayverson Baguio</strong></p>
       <p>Amount: <strong>₱500</strong></p>
     </div>
-    <a href="https://m.me/YOUR_FB_PAGE"
+    <a href="https://m.me/KSoundRentals"
       class="btn" target="_blank">
       Message Us on Facebook
     </a>
   </div>
-    <!-- FOOTER -->
-  <footer>
-    <p>© 2026 K-SoundRentals · Cebu City · <a href="#">Facebook Page</a></p>
+</section>
+
+ <footer>
+    <p>© 2026 K-SoundRentals · Cebu City ·
+      <a href="https://www.facebook.com/KSoundRentals"
+         target="_blank">KSoundRentals</a>
+    </p>
   </footer>
 
   <script src="calendar.js"></script>
-</section>
+  <script src="app.js"></script>
+</body>
+</html>

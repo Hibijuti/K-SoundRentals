@@ -143,14 +143,6 @@ function unlockAdmin() {
   }
 }
 
-// Show success message after form submit
-function handleBooking(e) {
-  e.preventDefault();
-  document.querySelector(".booking-form").style.display = "none";
-  document.querySelector(".btn-outline").style.display = "none";
-  document.getElementById("booking-success").style.display = "block";
-}
-
 // Start calendar on today's month when page loads
 const now = new Date();
 renderCalendar(now.getFullYear(), now.getMonth());

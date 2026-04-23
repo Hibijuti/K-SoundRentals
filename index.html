@@ -35,16 +35,73 @@
     <a href="#packages" class="btn">See Packages</a>
   </section>
 
-  <!-- EQUIPMENT SECTION -->
-  <section class="equipment">
-    <h2>What's Included in Every Package</h2>
-    <div class="equip-grid">
-      <div class="equip-item">🔊 JBL Partybox 520</div>
-      <div class="equip-item">📺 32" Flat Screen TV</div>
-      <div class="equip-item">🎵 Karaoke Player</div>
-      <div class="equip-item">🎙️ 2 JBL Wireless Mics</div>
+<!-- VIDEOS SECTION -->
+<section id="videos" class="videos">
+  <h2>See It In Action</h2>
+  <p>Watch our real karaoke setup videos from past events.</p>
+
+  <!-- CAROUSEL WRAPPER -->
+  <div class="carousel">
+
+    <!-- LEFT ARROW -->
+    <button class="carousel-btn prev" id="prev-btn">‹</button>
+
+    <!-- THE TRACK: all cards sit here side by side -->
+    <div class="carousel-track-wrapper">
+      <div class="carousel-track" id="carousel-track">
+
+        <!-- VIDEO CARD 1 -->
+        <a href="https://www.facebook.com/share/r/1Ns8TwmQs2/"
+           target="_blank" class="video-card">
+          <div class="video-thumb">
+            <img src="video1.jpg" alt="Birthday Party Setup">
+            <div class="play-btn">
+              <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <p class="video-label">Birthday Party Setup</p>
+        </a>
+
+        <!-- VIDEO CARD 2 -->
+        <a href="https://www.facebook.com/share/r/177mgxHSqY/"
+           target="_blank" class="video-card">
+          <div class="video-thumb">
+            <img src="video2.jpg" alt="Fiesta Night">
+            <div class="play-btn">
+              <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <p class="video-label">Fiesta Night</p>
+        </a>
+
+        <!-- VIDEO CARD 3 -->
+        <a href="https://www.facebook.com/share/r/1JE5j95vvZ/"
+           target="_blank" class="video-card">
+          <div class="video-thumb">
+            <img src="video3.jpg" alt="Family Reunion">
+            <div class="play-btn">
+              <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <p class="video-label">Family Reunion</p>
+        </a>
+
+        <!-- ADD MORE VIDEO CARDS HERE LATER -->
+        <!-- Just copy one of the blocks above, change the
+             href, src, alt, and video-label text -->
+
+      </div>
     </div>
-  </section>
+
+    <!-- RIGHT ARROW -->
+    <button class="carousel-btn next" id="next-btn">›</button>
+
+  </div>
+
+  <!-- DOTS navigation -->
+  <div class="carousel-dots" id="carousel-dots"></div>
+
+</section>
 
   <!-- PACKAGES SECTION -->
 <section id="packages" class="packages">
@@ -137,59 +194,7 @@
   </div>
 </section>
 
-  <!-- VIDEOS SECTION -->
-<section id="videos" class="videos">
-  <h2>See It In Action</h2>
-  <p>Watch our real karaoke setup videos from past events.</p>
-
-  <div class="video-grid">
-
-    <a href="https://www.facebook.com/share/r/1Ns8TwmQs2/"
-       target="_blank"
-       class="video-card">
-      <div class="video-thumb">
-        <img src="video1.jpg" alt="Birthday Party Setup">
-        <div class="play-btn">
-          <svg viewBox="0 0 24 24" fill="white">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-        </div>
-      </div>
-      <p class="video-label">Birthday Party Setup</p>
-    </a>
-
-    <a href="https://www.facebook.com/share/r/177mgxHSqY/"
-       target="_blank"
-       class="video-card">
-      <div class="video-thumb">
-        <img src="video2.jpg" alt="Fiesta Night">
-        <div class="play-btn">
-          <svg viewBox="0 0 24 24" fill="white">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-        </div>
-      </div>
-      <p class="video-label">Fiesta Night</p>
-    </a>
-
-    <a href="https://www.facebook.com/share/r/1JE5j95vvZ/"
-       target="_blank"
-       class="video-card">
-      <div class="video-thumb">
-        <img src="video3.jpg" alt="Family Reunion">
-        <div class="play-btn">
-          <svg viewBox="0 0 24 24" fill="white">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-        </div>
-      </div>
-      <p class="video-label">Family Reunion</p>
-    </a>
-
-  </div>
-</section>
-
-<!-- BOOKING SECTION -->
+ <!-- BOOKING SECTION -->
 <section id="booking" class="booking">
   <h2>Reserve Your Date</h2>
   <p class="booking-sub">Check available dates then fill in your details.
@@ -240,11 +245,13 @@
       <div class="form-group">
         <label>Full Name</label>
         <input type="text"
-          placeholder="Juan dela Cruz" required>
+            id="input-name"
+            placeholder="Juan dela Cruz" required>
       </div>
       <div class="form-group">
         <label>Contact Number</label>
         <input type="tel"
+          id="input-phone"
           placeholder="09XX XXX XXXX" required>
       </div>
     </div>
@@ -252,7 +259,7 @@
     <div class="form-row">
       <div class="form-group">
         <label>Event Date</label>
-        <input type="date" id="event-date" required>
+        <input type="date" id="input-date" required>
       </div>
       <div class="form-group">
         <label>Delivery Time</label>
@@ -288,6 +295,7 @@
     <div class="form-group">
       <label>Event Address</label>
       <input type="text"
+        id="input-address"
         placeholder="Barangay, City, Cebu" required>
     </div>
 
